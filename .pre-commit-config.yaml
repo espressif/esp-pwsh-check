@@ -50,13 +50,12 @@ repos:
         args: ["--write-changes"]
         additional_dependencies: [tomli]
 
-  # Local hook for PowerShell scripts checker
+  Local hook for PowerShell scripts checker
   - repo: local
     hooks:
       - id: check-powershell-scripts
         name: Check PowerShell Scripts
         description: This hook uses PSAnalyzer and checks PowerShell scripts files
-        entry: python -m esp_pwsh_check
-        language: python
+        language: docker
+        entry: pwsh_checker.ps1
         files: '.+\.ps1$'
-

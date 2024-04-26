@@ -6,7 +6,7 @@
 
 This repository serves as a PowerShell script checker such as a pre-commit hook for Espressif's projects.
 
-It is based on [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer?tab=readme-ov-file) from [PowerShell](https://github.com/PowerShell). 
+It is based on [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer?tab=readme-ov-file) from [PowerShell](https://github.com/PowerShell).
 
 ---
 
@@ -18,7 +18,7 @@ It is based on [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer
 ---
 
 ## Usage
-1. First of all, PowerShell needs to be installed on the machine ([Get PowerShell part of README in PowerShell's GH](https://github.com/PowerShell/PowerShell?tab=readme-ov-file#get-powershell)).
+1. First of all, Docker needs to be installed on the machine ([Docker](https://www.docker.com/#build)).
 2. Then add this hook into `.pre-commit-config.yaml` in your project.
 ```
   - repo: https://github.com/espressif/esp-pwsh-check
@@ -26,7 +26,7 @@ It is based on [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer
     hooks:
     -   id: check-powershell-scripts
 ```
-3. After this pre-commit should run this hook on all modified `.ps1` scripts. 
+3. After this pre-commit should run this hook on all modified `.ps1` scripts.
 
 ---
 

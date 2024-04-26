@@ -15,7 +15,7 @@ We welcome contributions! To contribute to this repository, please follow these 
 
 ## Documentation and Maintenance
 
-- **Changelog:** `CHANGELOG.md` is generated automatically by `commitizen` from commit messages. No need to update `CHANGELOG.md` manually. Focus on informative and clear commit messages that end in the release notes.
+- **Changelog:** `CHANGELOG.md`. Focus on informative and clear commit messages that end in the release notes.
 
 - **Documentation:** Regularly check and update the documentation to keep it current.
 
@@ -30,27 +30,7 @@ We welcome contributions! To contribute to this repository, please follow these 
 ```sh
 git clone <project_clone_url>
 ```
-
-2. **Set Up Development Environment:**
-
-- Create and activate a virtual environment:
-
-  ```sh
-  python -m venv venv && source ./venv/bin/activate
-  ```
-
-  or:
-
-  ```sh
-  virtualenv venv && source ./venv/bin/activate
-  ```
-
-- Install the project and development dependencies:
-  ```sh
-  pip install -e '.[dev]'
-  ```
-
-3. **Test the pre-commit hook locally:**
+2. **Test the pre-commit hook locally:**
   - Test the local hook of this repository in a different repository with the use of the following command
 
   ```sh
@@ -58,7 +38,7 @@ git clone <project_clone_url>
   ```
   for example:
    ```sh
-  pre-commit try-repo ../esp_pwsh_check check-powershell-scripts
+  pre-commit try-repo ../esp-pwsh-check check-powershell-scripts
   ```
 
 ---
