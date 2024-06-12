@@ -1,5 +1,4 @@
 #!/usr/bin/pwsh
-
 Param(
     [Parameter(Position = 0, ValueFromRemainingArguments = $true)]
     [string[]]$filepaths
