@@ -14,29 +14,6 @@ repos:
       - id: mixed-line-ending                            # Detects mixed line endings (CRLF/LF)
         args: ['-f=lf']                                  # Forces files to use LF line endings
 
-  - repo: https://github.com/pylint-dev/pylint
-    rev: v3.1.0
-    hooks:
-    -   id: pylint                                       # Runs pylint on Python code
-
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.3.0
-    hooks:
-      - id: ruff                                         # Linter
-        args: [--fix, --exit-non-zero-on-fix]
-      - id: ruff-format                                  # Formatter (replaces Black)
-
-  - repo: https://github.com/asottile/reorder_python_imports
-    rev: v3.12.0
-    hooks:
-    -   id: reorder-python-imports                       # Reorders Python imports to a standard format (replaces isort)
-
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.8.0
-    hooks:
-    -   id: mypy                                         # Runs mypy for Python type checking
-        additional_dependencies: ['types-all']
-
   - repo: https://github.com/espressif/conventional-precommit-linter
     rev: v1.6.0
     hooks:
@@ -50,12 +27,10 @@ repos:
         args: ["--write-changes"]
         additional_dependencies: [tomli]
 
-  Local hook for PowerShell scripts checker
-  - repo: local
+  # This hook for PowerShell scripts checker but from release
+  # the easiest way because of the logic of local hooks
+  # (https://github.com/pre-commit/pre-commit/issues/1081)
+  - repo: https://github.com/espressif/esp-pwsh-check
+    rev: v1.0.0
     hooks:
       - id: check-powershell-scripts
-        name: Check PowerShell Scripts
-        description: This hook uses PSAnalyzer and checks PowerShell scripts files
-        language: docker
-        entry: pwsh_checker.ps1
-        files: '.+\.ps1$'
